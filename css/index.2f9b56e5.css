@@ -1,0 +1,1184 @@
+.draw {
+  border: 2px solid #000;
+  bottom: .5em;
+  right: .5em;
+}
+
+.map.input#slider {
+  left: 8px;
+}
+
+.input#nudgeslider {
+  background-color: #00f;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#map > div > div.totalDistance {
+  text-align: center;
+  color: #fff;
+  z-index: 103;
+  background-color: #000;
+  font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
+  font-size: small;
+  position: absolute;
+  bottom: 2em;
+  left: 6.5em;
+}
+
+#map > div > div.minTime {
+  text-align: center;
+  color: #fff;
+  z-index: 103;
+  background-color: #000;
+  font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
+  font-size: small;
+  position: absolute;
+  bottom: .5em;
+  left: 6.5em;
+}
+
+#map > div > div.photoTally {
+  text-align: center;
+  color: #fff;
+  z-index: 103;
+  background-color: #000;
+  font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
+  font-size: small;
+  position: absolute;
+  bottom: 3.5em;
+  left: 6.5em;
+}
+
+#map > div > div.aoiArea {
+  text-align: center;
+  color: #fff;
+  z-index: 103;
+  background-color: #000;
+  font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
+  font-size: small;
+  position: absolute;
+  bottom: 5em;
+  left: 6.5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-zoom.ol-unselectable.ol-control > button {
+  background-color: #00f;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.satellite.ol-selectable.ol-control {
+  height: 2.5em;
+  width: 2.5em;
+  border: 2px solid #000;
+  bottom: 16em;
+  right: .5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.satellite.ol-selectable.ol-control > button {
+  height: 1.2em;
+  width: 1.2em;
+  background: #ffffffa1;
+  font-size: 2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.draw.ol-selectable.ol-control {
+  height: 2.5em;
+  width: 2.5em;
+  border: 2px solid #000;
+  bottom: 12.5em;
+  right: .5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.draw.ol-selectable.ol-control > button {
+  height: 1.2em;
+  width: 1.2em;
+  background: #ffffffa1;
+  font-size: 2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.export-to-litchi.ol-selectable.ol-control {
+  height: 2.5em;
+  width: 2.5em;
+  border: 2px solid #000;
+  bottom: 23em;
+  right: .5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.export-to-litchi.ol-selectable.ol-control > button {
+  height: 1.2em;
+  width: 1.2em;
+  background: #ffffffa1;
+  font-size: 2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.geolocate.ol-selectable.ol-control {
+  height: 2.5em;
+  width: 2.5em;
+  border: 2px solid #000;
+  bottom: 5.5em;
+  right: .5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.geolocate.ol-selectable.ol-control > button {
+  height: 1.2em;
+  width: 1.2em;
+  background: #ffffffa1;
+  font-size: 2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.photo-layer.ol-selectable.ol-control {
+  height: 2.5em;
+  width: 2.5em;
+  border: 2px solid #000;
+  bottom: 19.5em;
+  right: .5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.photo-layer.ol-selectable.ol-control > button {
+  height: 1.2em;
+  width: 1.2em;
+  background: #ffffffa1;
+  font-size: 2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.set-home-point.ol-selectable.ol-control {
+  height: 2.5em;
+  width: 2.5em;
+  border: 2px solid #000;
+  bottom: 9em;
+  right: .5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.set-home-point.ol-selectable.ol-control > button {
+  height: 1.2em;
+  width: 1.2em;
+  background: #ffffffa1;
+  font-size: 2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.direction.ol-selectable.ol-control {
+  height: 2.5em;
+  width: 2.5em;
+  z-index: 1001;
+  border: 2px solid #000;
+  bottom: 5.5em;
+  right: 4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.direction.ol-selectable.ol-control > button {
+  height: 1.2em;
+  width: 1.2em;
+  color: #000;
+  background: #ffffffa1;
+  font-size: 2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > input.gsdslider::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  background: #fff;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible {
+  mix-blend-mode: difference;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 11em;
+  border: 4px solid #000;
+  transition: all;
+  top: 2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.tools.ol-toggle.ol-button.ol-unselectable.ol-control.ol-active {
+  height: 1.2em;
+  width: 1.2em;
+  background-color: #ffffffa1;
+  border: 2px solid #000;
+  font-size: 2em;
+  transition: all;
+  bottom: 1em;
+  right: .3em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.tools.ol-toggle.ol-button.ol-unselectable.ol-control {
+  text-align: center;
+  height: 1.2em;
+  width: 1.2em;
+  background-color: #ffffffa1;
+  border: 1px solid #000;
+  font-size: 2em;
+  transition: all;
+  bottom: 1em;
+  right: .3em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.tools.ol-toggle.ol-button.ol-unselectable.ol-control > button {
+  height: 1.2em;
+  width: 1.2em;
+  background: #ffffffa1;
+  font-size: 1em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.menu.ol-toggle.ol-button.ol-unselectable.ol-control.ol-active {
+  border-width: 2px;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-zoom.ol-unselectable.ol-control > button {
+  color: #000;
+  background-color: #ffffffa1;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-zoom.ol-unselectable.ol-control > button:hover {
+  background-color: #00ff6a8e;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff {
+  mix-blend-mode: difference;
+  height: 100%;
+  width: 100%;
+  background-color: #00000080;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > select {
+  mix-blend-mode: difference;
+  text-align: center;
+  color: #fff;
+  width: 13em;
+  height: 1.5em;
+  background-color: #00000080;
+  border: 0;
+  margin-bottom: 1em;
+  font-size: .5em;
+  position: relative;
+  left: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.rotateText {
+  mix-blend-mode: difference;
+  text-anchor: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  user-select: none;
+  text-shadow: 0 0 2px #000;
+  background: none;
+  margin: 0 0 0;
+  font-size: .4em;
+  position: relative;
+  top: .3em;
+  left: .5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.slider {
+  appearance: none;
+  width: 75%;
+  height: 1.3em;
+  z-index: 102;
+  background: none;
+  border: 2px solid #000;
+  margin: 0;
+  position: relative;
+  top: -1em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.slider::-webkit-slider-thumb {
+  mix-blend-mode: multiply;
+  appearance: none;
+  width: 30px;
+  height: 15px;
+  cursor: hand;
+  z-index: 100;
+  background: #ffde4d80;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(4) {
+  width: 20px;
+  height: 20px;
+  color: #ffde4d;
+  text-shadow: 0 0 2px #000;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+  font-size: .5em;
+  position: relative;
+  top: -2.1em;
+  left: 10.4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(5) {
+  width: 1em;
+  height: 1em;
+  color: #ffde4d;
+  text-shadow: 0 0 2px #000;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+  font-size: .5em;
+  position: relative;
+  top: -3.15em;
+  left: 11.9em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.speedText {
+  text-anchor: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  user-select: none;
+  text-shadow: 0 0 2px #000;
+  background: none;
+  margin: 0 0 0;
+  font-size: .4em;
+  position: relative;
+  top: -2.3em;
+  left: .5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.speedslider {
+  appearance: none;
+  width: 75%;
+  height: 1.3em;
+  z-index: 102;
+  background: none;
+  border: 2px solid #000;
+  margin: 0;
+  position: relative;
+  top: -3.5em;
+}
+
+input.speedslider::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 15px;
+  cursor: hand;
+  background: #fff6;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(8) {
+  padding: none;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -4.2em;
+  left: 10.1em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(9) {
+  padding: none;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -5.35em;
+  left: 11.5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.gsdText {
+  text-anchor: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  user-select: none;
+  background: none;
+  margin: 0 0 0;
+  font-size: .4em;
+  position: relative;
+  top: -5.4em;
+  left: .4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.gsdslider {
+  appearance: none;
+  width: 75%;
+  height: 1.3em;
+  z-index: 101;
+  background: none;
+  border: 2px solid #000;
+  margin: 0;
+  transition: none;
+  position: relative;
+  top: -6.5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.gsdslider::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 15px;
+  cursor: hand;
+  z-index: 102;
+  background: #89ff5b80;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(12) {
+  width: 30px;
+  height: 30px;
+  color: #89ff5b;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -6.7em;
+  left: 10.15em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(13) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #89ff5b;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -7.9em;
+  left: 11.75em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.nudgeText {
+  text-anchor: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  user-select: none;
+  background: none;
+  margin: 0 0 0;
+  font-size: .4em;
+  position: relative;
+  top: -8.6em;
+  left: .4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.nudgeslider {
+  appearance: none;
+  width: 75%;
+  height: 1.3em;
+  z-index: 101;
+  background: none;
+  border: 2px solid #000;
+  margin: 0;
+  transition: none;
+  position: relative;
+  top: -9.5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.nudgeslider::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 15px;
+  cursor: hand;
+  z-index: 102;
+  background: #59ffcd80;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(16) {
+  width: 30px;
+  height: 30px;
+  color: #59ffcd;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -9.24em;
+  left: 10.15em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(17) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #59ffcd;
+  text-transform: uppercase;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -10.4em;
+  left: 11.75em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.sidelapText {
+  text-anchor: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  user-select: none;
+  background: none;
+  margin: 0 0 0;
+  font-size: .4em;
+  position: relative;
+  top: -11.7em;
+  left: .4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.sidelapslider {
+  appearance: none;
+  width: 75%;
+  height: 1.3em;
+  z-index: 101;
+  background: none;
+  border: 2px solid #000;
+  margin: 0;
+  transition: none;
+  position: relative;
+  top: -12.5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.sidelapslider::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 15px;
+  cursor: hand;
+  background: #ed64ff80;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(20) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #ed64ff;
+  text-transform: uppercase;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -11.7em;
+  left: 10.35em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(21) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #ed64ff;
+  text-transform: uppercase;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -12.9em;
+  left: 11.75em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.frontlapText {
+  text-anchor: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  user-select: none;
+  background: none;
+  margin: 0 0 0;
+  font-size: .4em;
+  position: relative;
+  top: -14.8em;
+  left: .4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.frontlapslider {
+  appearance: none;
+  width: 75%;
+  height: 1.3em;
+  z-index: 101;
+  background: none;
+  border: 2px solid #000;
+  margin: 0;
+  transition: none;
+  position: relative;
+  top: -15.5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.frontlapslider::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 15px;
+  cursor: hand;
+  z-index: 102;
+  background: #ff4d8280;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(24) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #ff4d82;
+  text-transform: uppercase;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -14.2em;
+  left: 10.4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(25) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #ff4d82;
+  text-transform: uppercase;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -15.4em;
+  left: 11.75em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.heightUpdateText {
+  text-anchor: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  user-select: none;
+  background: none;
+  margin: 0 0 0;
+  font-size: .4em;
+  position: relative;
+  top: -17.8em;
+  left: .4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.densifyslider {
+  appearance: none;
+  width: 75%;
+  height: 1.3em;
+  z-index: 101;
+  background: none;
+  border: 2px solid #000;
+  margin: 0;
+  transition: none;
+  position: relative;
+  top: -18.4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.densifyslider::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 15px;
+  cursor: hand;
+  z-index: 102;
+  background: #ff480080;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(28) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #ff4800;
+  text-transform: uppercase;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -16.7em;
+  left: 10.4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(29) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #ff4800;
+  text-transform: uppercase;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -17.8em;
+  left: 11.75em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.gimbalText {
+  text-anchor: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  user-select: none;
+  background: none;
+  margin: 0 0 0;
+  font-size: .4em;
+  position: relative;
+  top: -21em;
+  left: .4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.gimbalslider {
+  appearance: none;
+  width: 75%;
+  height: 1.3em;
+  z-index: 101;
+  background: none;
+  border: 2px solid #000;
+  margin: 0;
+  transition: none;
+  position: relative;
+  top: -21.5em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input.gimbalslider::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 15px;
+  cursor: hand;
+  z-index: 102;
+  background: #ffffff80;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(32) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #fff;
+  text-transform: uppercase;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -19.2em;
+  left: 10.4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > button:nth-child(33) {
+  width: 1.4em;
+  height: 1.3em;
+  color: #fff;
+  text-transform: uppercase;
+  background: none;
+  border-width: 0;
+  margin: 0;
+  font-size: .5em;
+  position: relative;
+  top: -20.3em;
+  left: 11.75em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.imageWidthText {
+  text-anchor: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  background-color: #00000080;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -29em;
+  left: 1.2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > div.imageWidthDisplay {
+  text-anchor: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -32em;
+  left: 2.4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(27) {
+  float: left;
+  width: 5.5em;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  background: #00000080;
+  border-width: 0;
+  margin: 0;
+  font-size: .4em;
+  position: relative;
+  top: -27em;
+  left: 1.2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(27)::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(27)::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.imageHeightText {
+  text-anchor: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  background-color: #00000080;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -37.3em;
+  left: 10.2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > div.imageHeightDisplay {
+  text-anchor: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -40.3em;
+  left: 11.4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(29) {
+  -moz-appearance: textfield;
+  appearance: none;
+  float: left;
+  width: 5.5em;
+  color: #fff;
+  text-align: center;
+  background: #00000081;
+  border-width: 0;
+  margin: 0;
+  font-size: .4em;
+  position: relative;
+  top: -25.45em;
+  left: 8.7em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(29)::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(29)::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(21) {
+  -moz-appearance: textfield;
+  appearance: none;
+  text-align: center;
+  color: #fff;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #00000081;
+  border: 0;
+  padding: 0;
+  font-size: .33em;
+  position: relative;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(21)::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(21)::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.sensorWidthText {
+  text-anchor: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-stretch: wider;
+  text-align: center;
+  background-color: #00000080;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -42.3em;
+  left: 10.2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > div.sensorWidthDisplay {
+  text-anchor: left;
+  font-stretch: wider;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -45.3em;
+  left: 11.4em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(31) {
+  -moz-appearance: textfield;
+  appearance: none;
+  float: left;
+  width: 5.5em;
+  color: #fff;
+  text-align: center;
+  background: #00000081;
+  border-width: 0;
+  margin: 0;
+  font-size: .4em;
+  position: relative;
+  top: -25.45em;
+  left: 8.7em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(31)::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(31)::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.focalLengthText {
+  text-anchor: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  background-color: #00000080;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -50.7em;
+  left: 1em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > div.focalLengthDisplay {
+  text-anchor: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -53.7em;
+  left: 2em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > p.frontlapDistanceText {
+  text-anchor: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  background-color: #00000080;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -46.7em;
+  left: 1em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > div.frontlapDisplay {
+  text-anchor: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 0;
+  font-size: .33em;
+  position: relative;
+  top: -48.7em;
+  left: 3em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(33) {
+  -moz-appearance: textfield;
+  appearance: none;
+  float: left;
+  width: 5.5em;
+  color: #fff;
+  text-align: center;
+  background: #00000081;
+  border-width: 0;
+  margin: 0;
+  font-size: .4em;
+  position: relative;
+  top: -29em;
+  left: 1em;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(33)::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-overlay.slide-left.menu.ol-visible > menustuff > input[type="number"]:nth-child(33)::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.ol-overlay.menu {
+  width: 70%;
+  text-shadow: 5px 5px 10px #000;
+  color: #fff;
+  box-shadow: none;
+  background: #0006;
+  margin-top: 1em;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 2em;
+  transition: all .25s;
+}
+
+#menu {
+  padding-top: .1em;
+  font-size: 2em;
+  transition: none;
+}
+
+.ol-control.menu {
+  mix-blend-mode: difference;
+  width: 4em;
+  height: 4em;
+  border: 1px solid #000;
+  bottom: .5em;
+  left: .5em;
+}
+
+.ol-control.menu > button {
+  color: #000;
+  width: 1.95em;
+  height: 1.95em;
+  background: #ffffffa4;
+  font-size: 2em;
+}
+
+.ol-control.menu i {
+  color: red;
+}
+
+.ol-zoom {
+  left: auto;
+  right: .5em;
+}
+
+.ol-rotate {
+  right: 3em;
+}
+
+.ol-touch .ol-rotate {
+  right: 3.5em;
+}
+
+.ol-overlay img {
+  max-width: 90%;
+}
+
+.data, .data p {
+  text-align: center;
+  margin: 0;
+  font-size: .9em;
+}
+
+#searchBox {
+  width: 14em;
+  height: 2em;
+  color: #fff;
+  text-align: center;
+  z-index: 1000;
+  background: #000000b4;
+  border-width: 0;
+  font-size: .8em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#searchButton {
+  width: 2.15em;
+  height: 2.15em;
+  color: #fff;
+  text-align: center;
+  z-index: 1000;
+  background: #00000081;
+  border-width: 0;
+  font-size: .8em;
+  position: absolute;
+  top: 0;
+  left: 14.7em;
+}
+
+#resultsList {
+  width: 20em;
+  height: auto;
+  color: #fff;
+  text-align: left;
+  z-index: 1000;
+  background: #000000b3;
+  border-width: 0;
+  padding-left: 0%;
+  font-family: Roboto, sans-serif;
+  font-size: .8em;
+  list-style: none;
+  position: absolute;
+  top: 1.7em;
+  left: 0;
+}
+
+#resultsList li {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: .2em;
+}
+
+/*# sourceMappingURL=index.2f9b56e5.css.map */
