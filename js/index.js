@@ -1,33 +1,34 @@
-"use strict";
-import { Map, View } from 'ol';
-import {Circle as CircleStyle, Fill, Icon, Stroke, Style} from 'ol/style';
-import {Draw, Modify, Snap} from 'ol/interaction';
-import {OSM, Vector, Vector as VectorSource, XYZ} from 'ol/source';
-import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
-import {get, project, Projection, useGeographic} from 'ol/proj';
-import {Control, defaults as defaultControls, Rotate, ZoomSlider} from 'ol/control';
-import {Geolocation} from 'ol';
-import {Point, MultiPoint, Polygon, MultiPolygon, Circle} from 'ol/geom';
-import saveAs from 'file-saver';
-import proj4 from 'proj4';
-import Collection from 'ol/Collection';
-import Feature from 'ol/Feature';
-import GeoJSON from 'ol/format/GeoJSON';
-import {Select as SelectInteraction} from 'ol/interaction';
-//import {rectangleGrid} from '@turf/rectangle-grid';
-import RotateFeatureInteraction from 'ol-rotate-feature';
-import {writeFeaturesObject, readFeatures} from 'ol/format/GeoJSON';
-import * as $ from 'jquery';
-import Overlay from './Overlay'; //edited by me to remove transition delay in toggle
-import Toggle from 'ol-ext/control/Toggle';
-import { rotate } from 'ol/transform';
-import { featureCollection, point } from '@turf/turf';
-import { Projection } from 'ol/proj';
+"use strict";  // Impone lo standard ECMAScript 5 "strict mode" che aiuta a catturare alcuni errori comuni e a prevenire l'uso di alcune funzionalità potenzialmente problematiche
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-//import OverlayPositioning from 'ol/OverlayPositioning';
+// Importazione di vari moduli da differenti librerie
+import { Map, View } from 'ol';  // Importa i moduli 'Map' e 'View' dalla libreria OpenLayers (ol)
+import {Circle as CircleStyle, Fill, Icon, Stroke, Style} from 'ol/style';  // Importa vari moduli per la gestione degli stili in OpenLayers
+import {Draw, Modify, Snap} from 'ol/interaction';  // Importa vari moduli per la gestione delle interazioni in OpenLayers
+import {OSM, Vector, Vector as VectorSource, XYZ} from 'ol/source';  // Importa vari moduli per la gestione delle sorgenti dati in OpenLayers
+import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';  // Importa moduli per la gestione dei layer in OpenLayers
+import {get, project, Projection, useGeographic} from 'ol/proj';  // Importa moduli per la gestione delle proiezioni in OpenLayers
+import {Control, defaults as defaultControls, Rotate, ZoomSlider} from 'ol/control';  // Importa moduli per la gestione dei controlli in OpenLayers
+import {Geolocation} from 'ol';  // Importa il modulo per la gestione della geolocalizzazione in OpenLayers
+import {Point, MultiPoint, Polygon, MultiPolygon, Circle} from 'ol/geom';  // Importa vari moduli per la gestione delle geometrie in OpenLayers
+import saveAs from 'file-saver';  // Importa il modulo 'saveAs' da 'file-saver' per salvare file sul client
+import proj4 from 'proj4';  // Importa la libreria proj4 per la gestione delle proiezioni geografiche
+import Collection from 'ol/Collection';  // Importa il modulo 'Collection' da OpenLayers per la gestione delle collezioni di oggetti
+import Feature from 'ol/Feature';  // Importa il modulo 'Feature' da OpenLayers per la gestione delle feature
+import GeoJSON from 'ol/format/GeoJSON';  // Importa il modulo 'GeoJSON' da OpenLayers per la gestione dei dati in formato GeoJSON
+import {Select as SelectInteraction} from 'ol/interaction';  // Importa il modulo 'Select' da OpenLayers per la gestione dell'interazione di selezione
+import RotateFeatureInteraction from 'ol-rotate-feature';  // Importa il modulo 'RotateFeatureInteraction' da 'ol-rotate-feature' per la gestione dell'interazione di rotazione delle feature
+import {writeFeaturesObject, readFeatures} from 'ol/format/GeoJSON';  // Importa i moduli 'writeFeaturesObject' e 'readFeatures' da OpenLayers per la gestione delle feature in formato GeoJSON
+import * as $ from 'jquery';  // Importa l'intera libreria jQuery e la rende disponibile come '$'
+import Overlay from './Overlay';  // Importa il modulo 'Overlay' da un file locale, modificato da me per rimuovere il ritardo di transizione nel toggle
+import Toggle from 'ol-ext/control/Toggle';  // Importa il modulo 'Toggle' da 'ol-ext' per la gestione dei controlli di
+import { rotate } from 'ol/transform';  // Importa il modulo 'rotate' da OpenLayers per la gestione della rotazione delle geometrie
+import { featureCollection, point } from '@turf/turf';  // Importa i moduli 'featureCollection' e 'point' da Turf.js, una libreria per la manipolazione di dati geospaziali
+import { Projection } from 'ol/proj';  // Importa il modulo 'Projection' da OpenLayers per la gestione delle proiezioni geografiche
 
+import { initializeApp } from "firebase/app";  // Importa la funzione 'initializeApp' dalla libreria Firebase per inizializzare un'app Firebase
+import { getAnalytics } from "firebase/analytics";  // Importa la funzione 'getAnalytics' da Firebase per ottenere un'istanza del servizio di analisi
+
+// Configurazione dell'app Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCOJnQfm4soMiCUhxhPcC36dndRoCJNaIE",
     authDomain: "drods-23779.firebaseapp.com",
@@ -38,13 +39,16 @@ const firebaseConfig = {
     measurementId: "G-WB7RS4GR5Y"
   };
 
-// Initialize Firebase
+// Inizializza l'app Firebase con la configurazione fornita
 const app = initializeApp(firebaseConfig);
+// Ottiene un'istanza del servizio di analisi Firebase
 const analytics = getAnalytics(app);
 
+// Definizione di una funzione asincrona 'init'
 async function init() {
-    //useGeographic(); double transforms 4326
+    // Funzione vuota
 
+    // Definizione di una classe 'Camera'
     function Camera(sensorWidth, focalLength, imageWidth, imageHeight) {
         this.sensorWidth = sensorWidth;
         this.focalLength = focalLength;
@@ -52,10 +56,10 @@ async function init() {
         this.imageHeight = imageHeight;
     }
 
+    // Creazione di una nuova istanza della classe 'Camera'
     let camera = new Camera(6.17, 4.49, 4000, 3000);
 
-    
-
+    // Dichiarazione di variabili
     let firstAndLastLineDistance;
     let traverseDistance = 0;
     let timeTravel = 0;
@@ -70,7 +74,7 @@ async function init() {
 
     let drawingActive = false;
 
-    // flight settings section
+    // Dichiarazione di variabili relative alle impostazioni del volo
     let currentCamera = 'DJI Mini 2';
     let drawnHomePoint = null;
     let homePointWgs84 = null;
@@ -84,11 +88,11 @@ async function init() {
     let focalLength = camera.focalLength;
     let imageWidth = camera.imageWidth;
     let imageHeight = camera.imageHeight;
-    let frontlapMetres = (currentGsd/1000 * imageHeight)/100; //base value of how much of the earth is captured in the photo
-    let frontlapSpacing = frontlapMetres*(1-currentFrontlap/1000); //how much of the earth is captured in the photo * frontlap percentage
+    let frontlapMetres = (currentGsd/1000 * imageHeight)/100; // valore di base di quanta parte della terra è stata catturata nella fotografia
+    let frontlapSpacing = frontlapMetres*(1-currentFrontlap/1000); // quanta parte della terra è catturata nella foto * percentuale di frontlap
     let currentGimbal = -90;
     let photoLayerOn = 0;
-    let multiPolarity = 1; // flips direction after each line
+    let multiPolarity = 1; // inverte la direzione dopo ogni riga
 
     const turf = require('@turf/turf');
     const rectangleGrid = require('@turf/rectangle-grid').default;
@@ -180,8 +184,8 @@ async function init() {
         return distanceInMetres;
     }
 
-    ////////////////        Export To Litchi
-    //create csv template
+    ////////////////        Esporta per Litchi
+    //crea un template csv 
 
     function createDistanceCsvFile(homePointWgs84, collection) {
         //console.log(collection, 'collection');
@@ -299,36 +303,40 @@ async function init() {
               return csvFile;
         }
     }
-
+    // Definizione della funzione 'togglePhotoLayer', che abilita/disabilita il layer delle foto sulla mappa
     function togglePhotoLayer() {
-        if (photoLayerOn == 1) {
-            photoLayerOn = 0;
-            map.removeLayer(photosLayer);
+        if (photoLayerOn == 1) {  // Se il layer delle foto è attivo
+            photoLayerOn = 0;  // Disattiva il layer delle foto
+            map.removeLayer(photosLayer);  // Rimuove il layer delle foto dalla mappa
+            // Aggiorna l'interfaccia utente per indicare che il layer delle foto è disattivato
             document.querySelector("#map > div > div.ol-overlaycontainer-stopevent > div.photo-layer.ol-selectable.ol-control > button").innerHTML = '🌚';
-        } else {
-            photoLayerOn = 1;
-            map.removeLayer(photosLayer);
-            map.addLayer(photosLayer);
+        } else {  // Se il layer delle foto non è attivo
+            photoLayerOn = 1;  // Attiva il layer delle foto
+            map.removeLayer(photosLayer);  // Rimuove il vecchio layer delle foto dalla mappa
+            map.addLayer(photosLayer);  // Aggiunge il nuovo layer delle foto alla mappa
+            // Aggiorna l'interfaccia utente per indicare che il layer delle foto è attivato
             document.querySelector("#map > div > div.ol-overlaycontainer-stopevent > div.photo-layer.ol-selectable.ol-control > button").innerHTML = '🌝';
         }
     }
-
+    // Definizione della funzione 'flipDirection', che cambia la direzione del percorso del drone
     function flipDirection() {
-        if (multiPolarity == 1) {
-            multiPolarity = 0;
+        if (multiPolarity == 1) {  // Se la multi polarità è attiva
+            multiPolarity = 0;  // Disattiva la multi polarità
+            // Aggiorna l'interfaccia utente per indicare che la multi polarità è disattivata
             document.querySelector("#map > div > div.ol-overlaycontainer-stopevent > div.direction.ol-selectable.ol-control > button").innerHTML = '⬆️';
-            //do lawn mower flipping directions
+            // Esegui il pattern 'lawn mower' (falciatrice) invertendo le direzioni
             if (drawnAoI) {lawnMowerPattern(currentRotation, camera)};
-        } else {
-            multiPolarity = 1;
+        } else {  // Se la multi polarità non è attiva
+            multiPolarity = 1;  // Attiva la multi polarità
+            // Aggiorna l'interfaccia utente per indicare che la multi polarità è attivata
             document.querySelector("#map > div > div.ol-overlaycontainer-stopevent > div.direction.ol-selectable.ol-control > button").innerHTML = '🔃';
-            //do lawn mower without flipping directions
+            // Esegui il pattern 'lawn mower' (falciatrice) senza invertire le direzioni
             if (drawnAoI) {lawnMowerPattern(currentRotation, camera)};
         }
     }
-
-    
+    // Definizione della funzione 'geolocate', che attiva la geolocalizzazione dell'utente
     function geolocate() {
+        // Crea un nuovo oggetto Geolocation con le opzioni per il tracciamento della posizione dell'utente
         const geolocation = new Geolocation({
             tracking: true,
             trackingOptions: {
@@ -336,26 +344,29 @@ async function init() {
             },
             projection: map.getView().getProjection()
         });
-
+        // Definizione di una funzione asincrona 'success' che viene chiamata quando la posizione dell'utente viene tracciata con successo
         async function success(position) {
-            const coordinates = geolocation.getPosition();
-            map.getView().animate({
-                center: coordinates,
-                zoom: 18,
-                duration: 1000
-            })
-            //map.getView().setCenter(coordinates);
-            //map.getView().setZoom(18);
-            geolocation.setTracking(false);
-        }
+            const coordinates = geolocation.getPosition();  // Ottiene le coordinate della posizione
 
-        geolocation.on('change', success);
+        // Anima la vista della mappa per centrarla sulle coordinate dell'utente
+        map.getView().animate({
+            center: coordinates,
+            zoom: 18,  // Imposta lo zoom a 18
+            duration: 1000  // Imposta la durata dell'animazione a 1000 millisecondi (1 secondo)
+        })
+        // Disattiva il tracciamento della posizione dell'utente dopo che la mappa è stata centrata sulla sua posizione
+        geolocation.setTracking(false);
     }
+
+    // Assegna la funzione 'success' all'evento 'change' dell'oggetto Geolocation,
+    // in modo che 'success' venga chiamata ogni volta che la posizione dell'utente cambia
+    geolocation.on('change', success);
+}
 
     function saveCSV() {
         let interestingPoints;
         if (drawnHomePoint && gridPointsCollection) {
-        if (waypointFrequency != 0) { // ??? it's never 0 the way it's set up at the moment I think this is a relic from when I was trying to make it work with the old way of doing things
+        if (waypointFrequency != 0) { // Non è mai stato 0 nel modo in cui è impostato al momento. Penso che questo sia un residuo di quando cercavo di farlo funzionare con il vecchio modo di fare le cose.
         interestingPoints = frontlapDistance(gridPointsCollection)[1];
         } else {
         interestingPoints = frontlapDistance(gridPointsCollection)[0];
@@ -380,7 +391,7 @@ async function init() {
     }
 
 
-    // end device settings section
+    // fine sezione impostazioni del dispositivo
 
     const stopPointsSource = new VectorSource({
         features: [],
