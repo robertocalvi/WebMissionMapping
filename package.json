@@ -1,0 +1,32 @@
+{
+  "name": "webmissionmapping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertocalvi/WebMissionMapping.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertocalvi/WebMissionMapping/issues"
+  },
+  "homepage": "https://github.com/robertocalvi/WebMissionMapping#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.21.5",
+    "@firebase/app": "^0.9.10",
+    "@turf/turf": "^6.5.0",
+    "file-saver": "^2.0.5",
+    "jquery": "^3.7.0",
+    "mgrs": "^2.0.0",
+    "ol": "^7.3.0",
+    "process": "^0.11.10",
+    "proj4": "^2.9.0",
+    "rbush": "^3.0.1"
+  }
+}
