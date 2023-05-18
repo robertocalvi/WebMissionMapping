@@ -21,7 +21,6 @@
   "homepage": "https://github.com/robertocalvi/WebMissionMapping#readme",
   "dependencies": {
     "@babel/runtime": "^7.21.5",
-    "@firebase/app": "^0.9.10",
     "@turf/turf": "^6.5.0",
     "file-saver": "^2.0.5",
     "jquery": "^3.7.0",
