@@ -52461,57 +52461,7 @@ sv = (t => ({
     get: (e, n, r) => gv(e, n) || t.get(e, n, r),
     has: (e, n) => !!gv(e, n) || t.has(e, n)
 }))(sv);
-/**
- * @license
- * Copyright 2019 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-class yv {
-    constructor(t)
-    {
-        this.container = t
-    }
-    getPlatformInfoString()
-    {
-        return this.container.getProviders().map((t => {
-            if (function(t) {
-                const e = t.getComponent();
-                return "VERSION" === (null == e ? void 0 : e.type)
-            }(t)) {
-                const e = t.getImmediate();
-                return `${e.library}/${e.version}`
-            }
-            return null
-        })).filter((t => t)).join(" ")
-    }
-}
 
-function wv(t) {
-    const e = t.name;
-    if (xv.has(e))
-        return vv.debug(`There were multiple attempts to register component ${e}.`), !1;
-    xv.set(e, t);
-    for (const e of _v.values())
-        Ev(e, t);
-    return !0
-}
-function bv(t, e) {
-    const n = t.container.getProvider("heartbeat").getImmediate({
-        optional: !0
-    });
-    return n && n.triggerHeartbeat(), t.container.getProvider(e)
-}
 
 onload = async function() {
     function t(t, e, n, r) {
