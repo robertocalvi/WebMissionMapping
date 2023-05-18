@@ -14,9 +14,7 @@ il codice nella repository è per un'applicazione di pianificazione di missioni 
 
 Come si passa da un poligono a una serie di linee parallele?
 
-Il codice crea una serie di linee parallele da un poligono utilizzando la libreria Turf.js. Questo si svolge nel blocco di codice che inizia con function makeGrid(aoi). 
-
-Ecco una descrizione di come funziona:
+Il codice crea una serie di linee parallele da un poligono utilizzando la libreria Turf.js. Questo si svolge nel blocco di codice che inizia con function makeGrid(aoi). Ecco una descrizione di come funziona:
 1.	Creazione di un rettangolo di delimitazione (BoundingBox): Utilizzando turf.bbox(aoi), viene creato un rettangolo di delimitazione intorno al poligono dell'Area di Interesse (AOI).
 2.	Creazione della griglia di linee: Utilizzando turf.rectangleGrid(bbox, cellSize, {units: 'degrees', mask: aoi}), viene creata una griglia di rettangoli che copre l'intero BoundingBox. L'opzione mask: aoi fa sì che solo le celle che intersecano l'AOI vengano incluse.
 3.	Conversione dei rettangoli in linee: Ciascun rettangolo nella griglia è in realtà un poligono. Il codice quindi estrae le linee superiori di ciascuno di questi rettangoli usando turf.lineString(rectangle.geometry.coordinates[0].slice(0,3)), creando così una serie di linee parallele.
