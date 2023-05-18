@@ -25,24 +25,6 @@ import { rotate } from 'ol/transform';  // Importa il modulo 'rotate' da OpenLay
 import { featureCollection, point } from '@turf/turf';  // Importa i moduli 'featureCollection' e 'point' da Turf.js, una libreria per la manipolazione di dati geospaziali
 import { Projection } from 'ol/proj';  // Importa il modulo 'Projection' da OpenLayers per la gestione delle proiezioni geografiche
 
-import { initializeApp } from "firebase/app";  // Importa la funzione 'initializeApp' dalla libreria Firebase per inizializzare un'app Firebase
-import { getAnalytics } from "firebase/analytics";  // Importa la funzione 'getAnalytics' da Firebase per ottenere un'istanza del servizio di analisi
-
-// Configurazione dell'app Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyCOJnQfm4soMiCUhxhPcC36dndRoCJNaIE",
-    authDomain: "drods-23779.firebaseapp.com",
-    projectId: "drods-23779",
-    storageBucket: "drods-23779.appspot.com",
-    messagingSenderId: "188910661133",
-    appId: "1:188910661133:web:a1b5a25b6ccc2420d3ef44",
-    measurementId: "G-WB7RS4GR5Y"
-  };
-
-// Inizializza l'app Firebase con la configurazione fornita
-const app = initializeApp(firebaseConfig);
-// Ottiene un'istanza del servizio di analisi Firebase
-const analytics = getAnalytics(app);
 
 // Definizione di una funzione asincrona 'init'
 async function init() {
