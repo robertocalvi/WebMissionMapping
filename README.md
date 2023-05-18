@@ -5,7 +5,7 @@ Codice del file index.js
 il codice nella repository è per un'applicazione di pianificazione di missioni per droni molto completa. Ecco una descrizione più dettagliata del codice:
 
 1.	Importazioni: vengono importati vari moduli da diverse librerie per fornire funzionalità come la mappatura, la gestione di dati geospaziali, l'interazione con l'utente, il salvataggio di file, e l'analisi dei dati.
-2.	Configurazione di Firebase: Configuri e inizializzi una connessione a un progetto Firebase.
+2.	Ho rimosso la configurazione di Firebase: Configurazone e inizializzazione di una connessione a un progetto Firebase.
 3.	Funzione init: Questa funzione viene chiamata quando l'applicazione si avvia. Configura le impostazioni per la fotocamera del drone, le impostazioni di volo, la mappatura, e altre funzionalità. All'interno di questa funzione, crei una mappa OpenLayers, configuri le sue interazioni e controlli, e imposti vari listener di eventi per gestire cose come il cambiamento delle impostazioni di volo e la creazione di un'area di interesse (AOI).
 4.	Creazione di una griglia di volo: Utilizzi la libreria Turf.js per creare una griglia di volo basata sull'AOI e sulle impostazioni di volo. Questa griglia viene poi visualizzata sulla mappa.
 5.	Punti di foto e waypoint: Calcoli i punti in cui il drone dovrebbe scattare foto e i waypoint in cui dovrebbe fermarsi, basandoti sulla griglia di volo e sulle impostazioni di volo. Questi punti vengono poi visualizzati sulla mappa.
